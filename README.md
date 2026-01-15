@@ -107,7 +107,37 @@ npm run dev
 1.  **Register & Login**: Coba bikin akun baru, terus login. Kalau password salah, bakal ditolak.
 2.  **Tambah Tugas**: Klik tombol "New Task" isi judul dan deskripsi.
 3.  **Hapus / Selesai**: Centang tugas kalau sudah selesai, atau hapus kalau batal.
-4.  **Responsive**: Coba buka di HP atau kecilkan browser, tampilannya tetap rapi (navbar pindah ke atas).
+- **Responsive**: Coba buka di HP atau kecilkan browser, tampilannya tetap rapi (navbar pindah ke atas).
+
+---
+
+## ✅ Cara Tes Sesuai Requirement (Simple To-Do List)
+
+Meskipun aplikasi ini menggunakan teknologi canggih, fitur utamanya tetap **Simple To-Do List** sesuai permintaan. Berikut cara tesnya:
+
+### 1. Register User Baru
+- Buka aplikasi di `http://localhost:5173`.
+- Klik menu **"Register"** di pojok kanan atas (atau redirect otomatis).
+- Masukkan username & password bebas (contoh: `user1` / `password1`).
+- Klik **Register**. Akun berhasil dibuat!
+
+### 2. Login
+- Masukkan username & password yang baru dibuat.
+- Klik **Login**.
+- Anda akan masuk ke halaman utama (Dashboard).
+
+### 3. Tambah & Kelola Tugas (CRUD)
+- **Tambah**: Klik tombol **"New Task"**, isi judul (misal: "Beli Telur"), klik **Simpan**. Tugas muncul di list.
+- **Selesai**: Klik **Checkbox** di sebelah kiri tugas. Tugas akan dicoret.
+- **Hapus**: Klik ikon **Sampah** 🗑️. Konfirmasi delete di popup. Tugas hilang.
+
+### 4. Isolasi Data (Penting!)
+Fitur ini memastikan user A tidak bisa melihat data user B.
+- Buka **Incognito Window** baru di browser.
+- Register user baru dengan nama beda (contoh: `user2`).
+- Login sebagai `user2`.
+- **Cek List**: Tugas "Beli Telur" milik `user1` **TIDAK AKAN MUNCUL** disini.
+- List `user2` bersih dan siap diisi tugasnya sendiri.
 
 ---
 
