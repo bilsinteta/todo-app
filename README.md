@@ -23,8 +23,6 @@ Aplikasi ini dibangun menggunakan teknologi kekinian:
 - **Axios**: Buat "nembak" API ke backend.
 - **CSS Custom**: Desainnya pakai gaya *Glassmorphism* (efek kaca) biar estetik ✨.
 
-- **CSS Custom**: Desainnya pakai gaya *Glassmorphism* (efek kaca) biar estetik ✨.
-
 ---
 
 ## 📸 Screenshots
