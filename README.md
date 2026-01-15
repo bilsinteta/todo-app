@@ -46,7 +46,6 @@ Pertama, download dulu kodingannya ke laptop kamu. Buka terminal/CMD/Git Bash:
 git clone https://github.com/bilsinteta/todo-app
 cd todo-app
 ```
-*(Ganti URL di atas dengan URL repository kamu sendiri nanti)*
 
 ### 2. Nyalakan Database (Paling Gampang Pakai Docker)
 Kita pakai Docker biar nggak perlu setting MySQL manual. Pastikan Docker Desktop sudah jalan, lalu ketik:
