@@ -68,8 +68,8 @@ Bikin file rahasia `.env` dulu (ini isinya konfigurasi database & password).
 echo PORT=8080 > .env
 echo DB_HOST=localhost >> .env
 echo DB_PORT=3310 >> .env
-echo DB_USER=root >> .env
-echo DB_PASSWORD=rootpassword >> .env
+echo DB_USER=todo_user >> .env
+echo DB_PASSWORD=todo_password >> .env
 echo DB_NAME=todo_db >> .env
 echo JWT_SECRET="ganti_tulisan_ini_jadi_password_rahasia_kamu" >> .env
 ```
