@@ -66,7 +66,11 @@ Bikin file rahasia `.env` dulu (ini isinya konfigurasi database & password).
 **Cara cepat di Windows (PowerShell):**
 ```powershell
 echo PORT=8080 > .env
-echo DB_DSN="root:rootpassword@tcp(localhost:3310)/todo_db?charset=utf8mb4&parseTime=True&loc=Local" >> .env
+echo DB_HOST=localhost >> .env
+echo DB_PORT=3310 >> .env
+echo DB_USER=root >> .env
+echo DB_PASSWORD=rootpassword >> .env
+echo DB_NAME=todo_db >> .env
 echo JWT_SECRET="ganti_tulisan_ini_jadi_password_rahasia_kamu" >> .env
 ```
 *(Atau kamu bisa bikin file baru bernama `.env` manual dan copy isinya)*
