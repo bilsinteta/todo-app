@@ -13,6 +13,8 @@ function Todos() {
   const [error, setError] = useState("");
   const [editId, setEditId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [deleteId, setDeleteId] = useState(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [filters, setFilters] = useState({
     search: "",
     status: "",
@@ -75,14 +77,27 @@ function Todos() {
     }
   };
 
-  const handleDeleteTodo = async (id) => {
+  const handleDeleteTodo = (id) => {
+    setDeleteId(id);
+    setIsDeleteModalOpen(true);
+  };
+
+  const confirmDelete = async () => {
+    if (!deleteId) return;
     try {
-      await todoAPI.deleteTodo(id);
-      setTodos(todos.filter((todo) => todo.ID !== id));
-      if (editId === id) handleCancelEdit();
+      await todoAPI.deleteTodo(deleteId);
+      setTodos(todos.filter((todo) => todo.ID !== deleteId));
+      if (editId === deleteId) handleCancelEdit();
+      setIsDeleteModalOpen(false);
+      setDeleteId(null);
     } catch (err) {
       setError("Failed to delete todo");
     }
+  };
+
+  const closeDeleteModal = () => {
+    setIsDeleteModalOpen(false);
+    setDeleteId(null);
   };
 
   const handleEdit = (todo) => {
@@ -158,6 +173,34 @@ function Todos() {
       </div>
 
       {error && <div className="error">{error}</div>}
+
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onClose={closeDeleteModal}
+        title="Confirm Delete"
+      >
+        <div className="form-stack">
+          <p className="description">
+            Are you sure you want to delete this task? This action cannot be undone.
+          </p>
+          <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
+            <button
+              onClick={confirmDelete}
+              className="btn btn-danger"
+              style={{ flex: 1 }}
+            >
+              Delete
+            </button>
+            <button
+              onClick={closeDeleteModal}
+              className="btn btn-secondary"
+              style={{ flex: 1 }}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </Modal>
 
       <Modal
         isOpen={isModalOpen}
