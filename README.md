@@ -43,7 +43,7 @@ Ikuti langkah-langkah ini, dijamin jalan!
 Pertama, download dulu kodingannya ke laptop kamu. Buka terminal/CMD/Git Bash:
 
 ```bash
-git clone https://github.com/bilsinteta/todo-app.git
+git clone https://github.com/bilsinteta/todo-app
 cd todo-app
 ```
 *(Ganti URL di atas dengan URL repository kamu sendiri nanti)*
