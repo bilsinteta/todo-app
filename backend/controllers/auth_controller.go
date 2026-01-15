@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"strings"
 	"todo-backend/config"
 	"todo-backend/models"
 	"todo-backend/utils"
@@ -33,7 +34,10 @@ func Register(c *fiber.Ctx) error {
 	}
 
 	if err := config.DB.Create(&user).Error; err != nil {
-		return c.Status(400).JSON(fiber.Map{"error": "Username already exists"})
+		if strings.Contains(strings.ToLower(err.Error()), "unique") || strings.Contains(strings.ToLower(err.Error()), "duplicate") {
+			return c.Status(400).JSON(fiber.Map{"error": "Username already exists"})
+		}
+		return c.Status(500).JSON(fiber.Map{"error": "Internal server error"})
 	}
 
 	return c.Status(201).JSON(fiber.Map{
