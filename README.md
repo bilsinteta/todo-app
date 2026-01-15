@@ -29,9 +29,13 @@ Aplikasi ini dibangun menggunakan teknologi kekinian:
 
 ## 📸 Screenshots
 
-| Login Page | Dashboard |
-|:----------:|:---------:|
-| ![Login Page](./assets/login.png) | ![Dashboard](./assets/dashboard.png) |
+| Login Page | Register Page |
+|:----------:|:-------------:|
+| ![Login Page](./assets/login.png) | ![Register Page](./assets/register.png) |
+
+| Dashboard (List) | New Task Modal |
+|:----------------:|:--------------:|
+| ![Dashboard](./assets/dashboard.png) | ![New Task](./assets/new_task.png) |
 
 ---
 
